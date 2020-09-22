@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ddidce/cleaning.github.io/static/css/main.3e2767f1.chunk.css",
+    "main.js": "/ddidce/cleaning.github.io/static/js/main.455f5abd.chunk.js",
+    "main.js.map": "/ddidce/cleaning.github.io/static/js/main.455f5abd.chunk.js.map",
+    "runtime-main.js": "/ddidce/cleaning.github.io/static/js/runtime-main.5bc79a9a.js",
+    "runtime-main.js.map": "/ddidce/cleaning.github.io/static/js/runtime-main.5bc79a9a.js.map",
+    "static/js/2.33a66fc8.chunk.js": "/ddidce/cleaning.github.io/static/js/2.33a66fc8.chunk.js",
+    "static/js/2.33a66fc8.chunk.js.map": "/ddidce/cleaning.github.io/static/js/2.33a66fc8.chunk.js.map",
+    "index.html": "/ddidce/cleaning.github.io/index.html",
+    "precache-manifest.695e7c862b9c55bad77eafbf5e5a7b39.js": "/ddidce/cleaning.github.io/precache-manifest.695e7c862b9c55bad77eafbf5e5a7b39.js",
+    "service-worker.js": "/ddidce/cleaning.github.io/service-worker.js",
+    "static/css/main.3e2767f1.chunk.css.map": "/ddidce/cleaning.github.io/static/css/main.3e2767f1.chunk.css.map",
+    "static/js/2.33a66fc8.chunk.js.LICENSE.txt": "/ddidce/cleaning.github.io/static/js/2.33a66fc8.chunk.js.LICENSE.txt",
+    "static/media/mainVideo.mp4": "/ddidce/cleaning.github.io/static/media/mainVideo.64d41f9a.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5bc79a9a.js",
+    "static/js/2.33a66fc8.chunk.js",
+    "static/css/main.3e2767f1.chunk.css",
+    "static/js/main.455f5abd.chunk.js"
+  ]
+}

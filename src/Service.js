@@ -1,16 +1,17 @@
 import React from 'react'
-import House from '../src/images/house.png';
-import Building from '../src/images/building.png';
-import University from '../src/images/university.png';
-import Hospital from '../src/images/hospital.png';
-import Dish from '../src/images/dish.png';
+import House from '../src/assets/images/house.png';
+import Building from '../src/assets/images/building.png';
+import University from '../src/assets/images/university.png';
+import Hospital from '../src/assets/images/hospital.png';
+import Dish from '../src/assets/images/dish.png';
+import '../src/Service.css'
 
 const Work = () => {
     return (
         <div>
-            <section>
+            <section className="Service-body">
                 <p><b>what</b>we do</p>
-                <div>
+                <div className="Service-part">
                     <div>
                     <img src={House} alt=""/>
                     <h3>일반시설</h3>

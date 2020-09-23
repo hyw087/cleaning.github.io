@@ -1,7 +1,7 @@
 import React from 'react'
-import Facebook from '../src/images/facebook-logo.png';
-import Twitter from '../src/images/twitter.png';
-import Instagram from '../src/images/instagram.png';
+import Facebook from '../src/assets/images/facebook-logo.png';
+import Twitter from '../src/assets/images/twitter.png';
+import Instagram from '../src/assets/images/instagram.png';
 
 const Estimate = () => {
     return (

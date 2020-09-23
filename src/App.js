@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
 // import ReactPlayer from 'react-player';
-import Video from '../src/videos/mainVideo.mp4';
+import Video from '../src/assets/videos/mainVideo.mp4';
 import Service from './Service';
 import Slide from './Slide'
+import About from './About'
 import { Link, Route } from 'react-router-dom';
+import {routers} from './consts/common';
 
 function App() {
   return (
@@ -24,7 +26,7 @@ function App() {
                         <li className="a"><Link to="/About">About</Link></li>
                         <li className="a"><Link to="/Service">Service</Link></li>
                         <li className="a"><Link to="/Contact">Contact</Link></li>
-                        <li className="a"><Link to="Price">Price</Link></li>
+                        <li className="a"><Link to="/Price">Price</Link></li>
                         <li>
                             Lgoin
                         </li>
@@ -44,7 +46,8 @@ function App() {
           </video>
           <div className="bgWith"></div>
         </section>
-
+        {/* 회사소개 */}
+        <About />
         {/* 기관 설명 */}
         <Service />
         {/* 슬라이드 바 */}

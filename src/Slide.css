@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #2789F6;
+    outline: none;
+}
+
+.slider h2 {
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+
+.slider p:nth-child(2) {
+    width: 400px;
+    margin-bottom: 60px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.slider p:nth-child(3) {
+    text-align: center;
+}

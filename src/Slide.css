@@ -15,6 +15,7 @@
     align-items: center;
     color: #2789F6;
     outline: none;
+    z-index: -1;
 }
 
 .slider h2 {

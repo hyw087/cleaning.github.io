@@ -7,6 +7,7 @@ import Slide from './Slide'
 import About from './About'
 import { Link, Route } from 'react-router-dom';
 import {routers} from './consts/common';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -45,7 +46,7 @@ function App() {
             <source src={Video} type="video/mp4"/>
           </video>
           <div className="bgWith"></div>
-        </section>
+        </section>  
         {/* 회사소개 */}
         <About />
         {/* 기관 설명 */}
@@ -53,21 +54,8 @@ function App() {
         {/* 슬라이드 바 */}
         <Slide />
       </main>
-
-      <footer>
-        <div>
-          <p>로고 이름</p>
-          <p>Cleaning</p>
-        </div>
-        <div>
-          <p>대충 큰 주소</p>
-          <p>대충 상세 주소</p>
-        </div>
-        <div>
-          <p>Tel : 02-2362-5923</p>
-          <p>영업시간 : 9am - 7pm</p>
-        </div>
-      </footer>
+      {/* 푸터 */}
+      <Footer />
 
       {/* <Route path="/" component={App} exact /> */}
     </div>

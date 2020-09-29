@@ -21,7 +21,6 @@ function SampleNextArrow(props) {
             className={classNames}
             style={{...styles, 
                     display:"block",
-                    
                 }}
             onClick={onClick}
         >

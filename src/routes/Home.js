@@ -6,31 +6,15 @@ import About from '../About'
 import Footer from '../Footer';
 import Video from '../assets/videos/mainVideo.mp4'
 import '../Home.css';
+// import { Navbar } from 'react-bootstrap';
+import Navbar from '../Navbar';
 
 const Home = () => {
   return (
     <div>
-      {/* 네비게이션 바
-      <Navbar /> */}
-          <header className="navbar">
-              <nav>
-                  <div className="navbar-left">
-                      <p>로고</p>
-                  </div>
-                  <div className="navbar-right">
-                    <ul>
-                        <li className="nav-menu">
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li className="nav-menu"><Link to="/About">About</Link></li>
-                        <li className="nav-menu"><Link to="/Service">Service</Link></li>
-                        <li className="nav-menu"><Link to="/Contact">Contact</Link></li>
-                        <li className="nav-menu"><Link to="/Price">Price</Link></li>
-                        <li id="login"><Link to="/Signup" target="_blank">SignUp</Link></li>
-                    </ul>
-                  </div>    
-              </nav>
-          </header>
+      {/* 네비게이션 바 */}
+      <Navbar />
+          
       <main>
         <section>
           <div className="main-font">

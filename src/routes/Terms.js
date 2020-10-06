@@ -1,7 +1,7 @@
 import React from 'react'
 import '../term.css';
 
-const Terms = () => {
+const Terms = ({onCheck}) => {
     return (
         <form name="userForm" class="join_form">
         <div class="join_tit">
@@ -145,8 +145,9 @@ const Terms = () => {
                 </p>
             </div>
         </div>
+        {/* 체크박스 */}
         <div class="chk_box">
-            <input type="checkbox" id="agree01" name="agree_box02" />
+            <input type="checkbox" id="agree01" name="agree_box02" onClick={(e) => onCheck(e)}/>
             <label for="agree01"><span></span><p>동의합니다.</p></label>
         </div>
         <strong>개인정보처리방침</strong>
@@ -267,7 +268,7 @@ const Terms = () => {
             </div>
         </div>
         <div class="chk_box">
-            <input type="checkbox" id="agree02" name="agree_box03" />
+            <input type="checkbox" id="agree02" name="agree_box03" onClick={(e) => onCheck(e)}/>
             <label for="agree02"><span></span><p>동의합니다.</p></label>
         </div>
     </form>

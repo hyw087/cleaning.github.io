@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -31,44 +31,88 @@ function getSteps() {
     return ['약관동의', '정보입력', '가입완료'];
 }
 
-function getStepContent(stepIndex) {
-    switch (stepIndex) {
-        case 0:
-        return (
-            <>
-                <Terms />
-            </>
-        );
-        case 1:
-        return 'What is an ad group anyways?';
-        case 2:
-        return 'This is the bit I really care about!';
-        default:
-        return 'Unknown stepIndex';
-    }
-}
+// function getStepContent(stepIndex) {
+
+//     switch (stepIndex) {
+//         case 0:
+        
+//         return (
+//             <>
+//                 <Terms onCheck={(checkedTarget) => {
+//                     if(checkedTarget === true) {
+
+//                     } else {
+                        
+//                     }
+//                 } }/>
+//             </>
+//         );
+//         case 1:
+//         return 'What is an ad group anyways?';
+//         case 2:
+//         return 'This is the bit I really care about!';
+//         default:
+//         return 'Unknown stepIndex';
+//     }
+// }
+
+
 
 export default function HorizontalLabelPositionBelowStepper() {
     const classes = useStyles();
     const [activeStep, setActiveStep] = React.useState(0);
+    const [checked, setChecked] = useState(
+        {
+            agree01 : false,
+            agree02 : false,
+        }
+    );
     const steps = getSteps();
 
     const handleNext = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        if((checked.agree01 && checked.agree02)) {
+            setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        }
     };
 
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 
-    const handleReset = () => {
-        setActiveStep(0);
-    };
-
     const headerstyle =  {
         textAlign : "center",
     }
 
+    function getStepContent(stepIndex) {
+
+        switch (stepIndex) {
+            case 0:
+            
+            return (
+                <>
+                    <Terms onCheck={(checkedTarget) => {
+                        // console.dir(checkedTarget.target);
+                        // console.dir(checkedTarget);
+                        setChecked({
+                            ...checked,
+                            // 아이디가 agree01 , agree02일수도 있기때문에 []로로 감싸준다 <- 변수사용을위해서
+                            // []안감싸줄때는 무조건 String으로만 쓸때
+                            [checkedTarget.target.id] : checkedTarget.target.checked,
+                        })
+                        // console.log([checkedTarget.target.id]);
+                        // console.log([checkedTarget.target.checked]);
+                    }}/>
+                </>
+            );
+            case 1:
+            return 'What is an ad group anyways?';
+            case 2:
+            return 'This is the bit I really care about!';
+            default:
+            return 'Unknown stepIndex';
+        }
+    }
+    console.log(checked);
     return (
     <div>
         <Navbar />

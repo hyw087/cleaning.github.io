@@ -1,15 +1,13 @@
-import React from 'react';
-import './App.css';
-// import ReactPlayer from 'react-player';
-import Video from '../src/assets/videos/mainVideo.mp4';
-import Service from './Service';
-import Slide from './Slide'
-import About from './About'
-import { Link, Route } from 'react-router-dom';
-import {routers} from './consts/common';
-import Footer from './Footer';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Service from '../Service';
+import Slide from '../Slide'
+import About from '../About'
+import Footer from '../Footer';
+import Video from '../assets/videos/mainVideo.mp4'
+import '../Home.css';
 
-function App() {
+const Home = () => {
   return (
     <div>
       {/* 네비게이션 바
@@ -21,16 +19,14 @@ function App() {
                   </div>
                   <div className="navbar-right">
                     <ul>
-                        <li className="a">
+                        <li className="nav-menu">
                             <Link to="/">Home</Link>
                         </li>
-                        <li className="a"><Link to="/About">About</Link></li>
-                        <li className="a"><Link to="/Service">Service</Link></li>
-                        <li className="a"><Link to="/Contact">Contact</Link></li>
-                        <li className="a"><Link to="/Price">Price</Link></li>
-                        <li>
-                            Lgoin
-                        </li>
+                        <li className="nav-menu"><Link to="/About">About</Link></li>
+                        <li className="nav-menu"><Link to="/Service">Service</Link></li>
+                        <li className="nav-menu"><Link to="/Contact">Contact</Link></li>
+                        <li className="nav-menu"><Link to="/Price">Price</Link></li>
+                        <li id="login"><Link to="/Signup" target="_blank">SignUp</Link></li>
                     </ul>
                   </div>    
               </nav>
@@ -57,9 +53,9 @@ function App() {
       {/* 푸터 */}
       <Footer />
 
-      {/* <Route path="/" component={App} exact /> */}
+      {/* <Route path="/" component={Home} exact /> */}
     </div>
-  );
+  )
 }
 
-export default App;
+export default Home

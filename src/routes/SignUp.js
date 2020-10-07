@@ -7,15 +7,17 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Navbar from '../Navbar';
 import Terms from './Terms';
+import '../SignUp.css'
+import InfoInput from './InfoInput';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '50%',
+        width: '73%',
         textAlign : "center",
-        marginRight : "auto",
-        marginLeft : "auto",
-        marginTop : "0",
-        marginBottom : "0",
+        // marginRight : "auto",
+        // marginLeft : "auto",
+        // marginTop : "0",
+        // marginBottom : "0",
 
     },
     backButton: {
@@ -72,6 +74,8 @@ export default function HorizontalLabelPositionBelowStepper() {
     const handleNext = () => {
         if((checked.agree01 && checked.agree02)) {
             setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        }else {
+            alert("약관동의하셔야합니다.");
         }
     };
 
@@ -105,7 +109,11 @@ export default function HorizontalLabelPositionBelowStepper() {
                 </>
             );
             case 1:
-            return 'What is an ad group anyways?';
+            return (
+                <>
+                    <InfoInput />
+                </>
+            );
             case 2:
             return 'This is the bit I really care about!';
             default:
@@ -114,8 +122,8 @@ export default function HorizontalLabelPositionBelowStepper() {
     }
     console.log(checked);
     return (
-    <div>
-        <Navbar />
+    <div className="steper">
+        {/* <Navbar /> */}
         <h1 style={headerstyle}>회원가입</h1>
         <div className={classes.root}>
         <Stepper activeStep={activeStep} alternativeLabel={false}>
@@ -140,7 +148,7 @@ export default function HorizontalLabelPositionBelowStepper() {
                     onClick={handleBack}
                     className={classes.backButton}
                 >
-                    뒤로
+                뒤로
                 </Button>
                 <Button variant="contained" color="primary" onClick={handleNext}>
                     {/* 완료 클릭시 Link줘서 회원가입이 완료되었습니다 나오게끔 */}

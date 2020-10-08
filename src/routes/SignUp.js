@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
@@ -9,6 +10,9 @@ import Navbar from '../Navbar';
 import Terms from './Terms';
 import '../SignUp.css'
 import InfoInput from './InfoInput';
+import SignUpComp from './SignUpComp'
+import Home from './Home';
+import { Link, Route } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -27,6 +31,11 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(1),
         marginBottom: theme.spacing(1),
     },
+    mainButton : {
+        "margin-right": "8px",
+        textDecoration : "none",
+        color: "#000"
+    }
 }));
 
 function getSteps() {
@@ -115,9 +124,13 @@ export default function HorizontalLabelPositionBelowStepper() {
                 </>
             );
             case 2:
-            return 'This is the bit I really care about!';
-            default:
-            return 'Unknown stepIndex';
+            return(
+                <>
+                    <SignUpComp />
+                </>
+            );
+            // default:
+            // return 'Unknown stepIndex';
         }
     }
     console.log(checked);
@@ -141,18 +154,18 @@ export default function HorizontalLabelPositionBelowStepper() {
             </div>
             ) : (
             <div>
-                <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+                {getStepContent(activeStep)}
                 <div>
                 <Button
                     disabled={activeStep === 0}
                     onClick={handleBack}
                     className={classes.backButton}
                 >
-                뒤로
+                {activeStep === 0 || activeStep === 1 ? "뒤로" : <Link to="/" className={classes.mainButton}>{"메인으로"}</Link>}
                 </Button>
                 <Button variant="contained" color="primary" onClick={handleNext}>
                     {/* 완료 클릭시 Link줘서 회원가입이 완료되었습니다 나오게끔 */}
-                    {activeStep === steps.length - 1 ? '완료' : '다음'}
+                    {activeStep === steps.length - 1 ? '로그인' : '다음'}
                 </Button>
                 </div>
             </div>

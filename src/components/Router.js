@@ -2,8 +2,9 @@ import React from 'react';
 // import SignUp from '../routes/signUp';
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from '../routes/Home';
-import InfoInput from '../routes/InfoInput';
+import SignUpComp from '../routes/SignUpComp';
 import SignUp from '../routes/SignUp';
+
 
 const AppRouter = ({isLoggedIn}) => {
     return (
@@ -18,8 +19,8 @@ const AppRouter = ({isLoggedIn}) => {
                         <SignUp />
                     </Route>
 
-                    <Route exact path="/InfoInput">
-                        <InfoInput />
+                    <Route exact path="/SignUpComp">
+                        <SignUpComp />
                     </Route>
                 )
             </Switch>

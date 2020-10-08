@@ -10,12 +10,6 @@ const SignUpComp = () => {
             <p>프로젝트 회원이 되신 것을 축하합니다.</p>
             <img src={CompleteIc} />
         </div>
-        {/* <div class="btn_box">
-            <div>
-                <button type="button" class="btn_list" onclick="location.href='/';">메인으로</button>
-                <button type="button" class="btn_ok" onclick="location.href='login.asp';">로그인</button>
-            </div>
-        </div> */}
     </div>
     )
 }

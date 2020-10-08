@@ -34,7 +34,12 @@ const useStyles = makeStyles((theme) => ({
     mainButton : {
         "margin-right": "8px",
         textDecoration : "none",
-        color: "#000"
+        color: "#000",
+    },
+
+    LogInButton : {
+        color : "#fff",
+        textDecoration : "none",
     }
 }));
 
@@ -165,7 +170,7 @@ export default function HorizontalLabelPositionBelowStepper() {
                 </Button>
                 <Button variant="contained" color="primary" onClick={handleNext}>
                     {/* 완료 클릭시 Link줘서 회원가입이 완료되었습니다 나오게끔 */}
-                    {activeStep === steps.length - 1 ? '로그인' : '다음'}
+                    {activeStep === steps.length - 1 ? <Link to ="/LogIn" className={classes.LogInButton}>{'로그인'}</Link> : '다음'}
                 </Button>
                 </div>
             </div>

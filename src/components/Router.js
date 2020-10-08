@@ -4,6 +4,7 @@ import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from '../routes/Home';
 import SignUpComp from '../routes/SignUpComp';
 import SignUp from '../routes/SignUp';
+import LogIn from '../routes/LogIn';
 
 
 const AppRouter = ({isLoggedIn}) => {
@@ -21,6 +22,10 @@ const AppRouter = ({isLoggedIn}) => {
 
                     <Route exact path="/SignUpComp">
                         <SignUpComp />
+                    </Route>
+
+                    <Route exact path="/Login"> 
+                        <LogIn />
                     </Route>
                 )
             </Switch>

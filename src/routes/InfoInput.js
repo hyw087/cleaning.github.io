@@ -1,7 +1,62 @@
-import React from 'react'
+import React, { useState } from 'react'
+import DaumPostcode from 'react-daum-postcode';
 import '../InfoInput.css'
 
 const InfoInput = () => {
+    const [post, setPost] = useState(
+        {
+            name: "",
+            phone: "",
+            address: "",
+            zoneCode : "",
+            fullAddress : "",
+            isDaumPost : false,
+            isRegister : false,
+            register: [],
+        }
+    )
+
+    const handleData = data => {
+        console.log(data);
+    }
+    
+    const handleOpenPost = () => {
+        setPost({
+            ...post,
+            isDaumPost : true,
+        })
+    }
+
+    const handleComplete = (data) => {
+        let fullAddress = data.address;
+        let extraAddress = ''; 
+        
+        if (data.addressType === 'R') {
+          if (data.zonecode !== '') {
+            extraAddress += data.zonecode;
+          }
+          if (data.buildingName !== '') {
+            extraAddress += (extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName);
+          }
+          fullAddress += (extraAddress !== '' ? '' : '');
+        }
+        document.getElementById("extraAddress").value = extraAddress;
+        document.getElementById("fullAddress").value = fullAddress;
+        
+        console.dir(fullAddress);  // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
+        console.dir(data);  // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
+      }
+
+        const width = '595px';
+        const height = '450px';
+        const modalStyle = {
+            position: "absolute",
+            top: 0,
+            left: '250px',
+            zIndex: "999",
+            border: "1px solid #000000",
+            overflow: "hidden"
+        }
     return (
         <div>
             <form>
@@ -35,11 +90,24 @@ const InfoInput = () => {
                     <div className="row post_address">
                         <label for="join_address" className="label">주소 *</label>
                         <div className="input_box id">
-                            <div>
-                                <input type="text" name="strZip" readonly />
-                                <button type="button">우편번호 통합검색</button>
+                            <div onClick={handleOpenPost}>
+                                <button type="button" >우편번호 통합검색</button>
+                                {
+                                    post.isDaumPost ? 
+                                    <DaumPostcode 
+                                        onComplete={handleComplete}
+                                        autoClose
+                                        width={width}
+                                        height={height}
+                                        style={modalStyle}
+                                        isDaumPost={post.isDaumPost}
+                                        /> :
+                                    null
+                                }
+                                <input type="text" name="strZip" readonly id="extraAddress"/>
                             </div>
-                            <input type="text" name="strAddr1" id="strAddr1" maxlength="200" />
+                            
+                            <input type="text" name="strAddr1" id="fullAddress" maxlength="200" />
                             <input type="text" name="strAddr2" id="strAddr2" maxlength="200" />
                         </div>
                     </div>

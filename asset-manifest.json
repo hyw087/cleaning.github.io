@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/cleaning.github.io/static/css/main.d971d298.chunk.css",
-    "main.js": "/cleaning.github.io/static/js/main.5842b5e7.chunk.js",
-    "main.js.map": "/cleaning.github.io/static/js/main.5842b5e7.chunk.js.map",
+    "main.css": "/cleaning.github.io/static/css/main.2a604bc2.chunk.css",
+    "main.js": "/cleaning.github.io/static/js/main.edb0aec9.chunk.js",
+    "main.js.map": "/cleaning.github.io/static/js/main.edb0aec9.chunk.js.map",
     "runtime-main.js": "/cleaning.github.io/static/js/runtime-main.217934cd.js",
     "runtime-main.js.map": "/cleaning.github.io/static/js/runtime-main.217934cd.js.map",
     "static/css/2.edbb7887.chunk.css": "/cleaning.github.io/static/css/2.edbb7887.chunk.css",
-    "static/js/2.28e91dfe.chunk.js": "/cleaning.github.io/static/js/2.28e91dfe.chunk.js",
-    "static/js/2.28e91dfe.chunk.js.map": "/cleaning.github.io/static/js/2.28e91dfe.chunk.js.map",
+    "static/js/2.72cdae7c.chunk.js": "/cleaning.github.io/static/js/2.72cdae7c.chunk.js",
+    "static/js/2.72cdae7c.chunk.js.map": "/cleaning.github.io/static/js/2.72cdae7c.chunk.js.map",
     "index.html": "/cleaning.github.io/index.html",
-    "precache-manifest.2de87ff1e785728d7319e04b8e250c2d.js": "/cleaning.github.io/precache-manifest.2de87ff1e785728d7319e04b8e250c2d.js",
+    "precache-manifest.f1f396d74dc369853ebf9c049149b102.js": "/cleaning.github.io/precache-manifest.f1f396d74dc369853ebf9c049149b102.js",
     "service-worker.js": "/cleaning.github.io/service-worker.js",
     "static/css/2.edbb7887.chunk.css.map": "/cleaning.github.io/static/css/2.edbb7887.chunk.css.map",
-    "static/css/main.d971d298.chunk.css.map": "/cleaning.github.io/static/css/main.d971d298.chunk.css.map",
-    "static/js/2.28e91dfe.chunk.js.LICENSE.txt": "/cleaning.github.io/static/js/2.28e91dfe.chunk.js.LICENSE.txt",
+    "static/css/main.2a604bc2.chunk.css.map": "/cleaning.github.io/static/css/main.2a604bc2.chunk.css.map",
+    "static/js/2.72cdae7c.chunk.js.LICENSE.txt": "/cleaning.github.io/static/js/2.72cdae7c.chunk.js.LICENSE.txt",
     "static/media/AboutUs_one.jpg": "/cleaning.github.io/static/media/AboutUs_one.1806e373.jpg",
     "static/media/mainVideo.mp4": "/cleaning.github.io/static/media/mainVideo.64d41f9a.mp4",
     "static/media/slick-theme.css": "/cleaning.github.io/static/media/slick.f97e3bbf.svg"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.217934cd.js",
     "static/css/2.edbb7887.chunk.css",
-    "static/js/2.28e91dfe.chunk.js",
-    "static/css/main.d971d298.chunk.css",
-    "static/js/main.5842b5e7.chunk.js"
+    "static/js/2.72cdae7c.chunk.js",
+    "static/css/main.2a604bc2.chunk.css",
+    "static/js/main.edb0aec9.chunk.js"
   ]
 }

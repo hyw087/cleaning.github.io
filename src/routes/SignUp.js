@@ -18,11 +18,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         width: '73%',
         textAlign : "center",
-        // marginRight : "auto",
-        // marginLeft : "auto",
-        // marginTop : "0",
-        // marginBottom : "0",
-
     },
     backButton: {
         marginRight: theme.spacing(1),
@@ -154,7 +149,7 @@ export default function HorizontalLabelPositionBelowStepper() {
         <div>
             {activeStep === steps.length ? (
             <div>
-                <Typography className={classes.instructions}>All steps completed</Typography>
+                <Typography className={classes.instructions}><Link to ="/LogIn" className={classes.LogInButton}>{'로그인'}</Link></Typography>
                 {/* <Button onClick={handleReset}>Reset</Button> */}
             </div>
             ) : (

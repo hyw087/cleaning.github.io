@@ -30,7 +30,7 @@
     position: relative;
     box-sizing: border-box;
     height: 100%;
-    padding: 10px;
+    padding: 0 10px;
     font-size: 1rem;
     font-weight: 400;
     color: #333;
@@ -120,4 +120,5 @@ button {
 .write_form .row .input_box.email .marketing .chk_box .chk_box_input {
     width: 50px;
     height: 20px;
+    top: 0;
 }

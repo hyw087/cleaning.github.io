@@ -6,6 +6,7 @@ import SignUpComp from '../routes/SignUpComp';
 import SignUp from '../routes/SignUp';
 import LogIn from '../routes/LogIn';
 import InfoInput from '../routes/InfoInput';
+import MemberModifiy from '../routes/MemberModifiy';
 
 
 const AppRouter = ({isLoggedIn}) => {
@@ -31,6 +32,10 @@ const AppRouter = ({isLoggedIn}) => {
 
                     <Route exact path="/asd"> 
                         <InfoInput />
+                    </Route>
+
+                    <Route exact path="/asddsad">
+                        <MemberModifiy />
                     </Route>
                 )
             </Switch>

@@ -1,32 +1,93 @@
-import zIndex from '@material-ui/core/styles/zIndex';
-import React, { useEffect, useState } from 'react'
+import { text } from '@fortawesome/fontawesome-svg-core';
+import React, {useEffect, useState } from 'react'
 import DaumPostcode from 'react-daum-postcode';
-import { createPortal } from 'react-dom';
 import '../InfoInput.css'
 
+// http://www.objgen.com/json/models/Pzu <- json파일
 const InfoInput = () => {
     const [post, setPost] = useState(
         {
-            name: "",
-            phone: "",
-            address: "",
-            zoneCode : "",
+            zoneCode : [""],
             fullAddress : "",
             isDaumPost : false,
-            isRegister : false,
-            register: [],
         }
-    )
+    );
+        // console.log(post)
+    const [id,setId] = useState('');
+    const [password,setPassword] = useState('');
+    const [passwordCheck,setPasswordCheck] = useState('');
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+    // detailedAddress => deAddress
+    const [deAddress, setDeAddress] = useState('');
+    const [passwordError,setPasswordError] = useState(false);
 
-    const handleData = data => {
-        console.log(data);
+
+    const onSubmit = e => {
+        e.preventDefault();
+
+        if(password !== passwordCheck) {
+            return setPasswordError(true);
+
+        }
+    }
+    console.log({
+        id,
+        password,
+        passwordCheck,
+        name,
+        phone,
+        email,
+        deAddress,
+        post,
+        "zoneCode" : post.zoneCode,
+    });
+
+    const onChangeId = e => {
+        setId(e.target.value);
+    }
+
+    const onChangePassword = e => {
+        setPassword(e.target.value);
+    }
+
+    const onChangePasswordChk = e => {
+        setPasswordError(e.target.value !== password);
+        setPasswordCheck(e.target.value);
+    }
+
+    const onChangeName = e => {
+        setName(e.target.value);
+    }
+
+    const onPhoneNum = e => {
+        setPhone(e.target.value);
+    }
+
+    const onEmail = e => {
+        setEmail(e.target.value);
+    }
+
+    const onFullAddress = e => {
+        setPost({
+            fullAddress : e.target.value
+        })
+        this.props.bind(e.target.name, e.target.value);
+    }
+
+    const onDetailAddress = e => {
+        setDeAddress(e.target.value);
     }
     
     const handleOpenPost = () => {
         setPost({
             ...post,
             isDaumPost : true,
+            // [e.target] : e.target.value,
+            // fullAddress : e.target.value,
         })
+        // console.log([e.target]);
     }
 
     const handleComplete = (data) => {
@@ -45,16 +106,17 @@ const InfoInput = () => {
         document.getElementById("extraAddress").value = extraAddress;
         document.getElementById("fullAddress").value = fullAddress;
         
-        console.dir(fullAddress);  // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
-        console.dir(data);  // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
-        }
+        //console.log(data.address);  // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
+        //console.log(data.fullAddress);  // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
+        //console.dir(data);
+    }
 
-        const width = '595px';
+        const width = '450px';
         const height = '450px';
         const modalStyle = {
             position: "absolute",
-            top: '27.6%',
-            left: '16.4%',
+            top: '50.4%',
+            left: '21.9%',
             border: "1px solid #000000",
             zIndex : 100,
             // overflow: "hidden"
@@ -69,37 +131,38 @@ const InfoInput = () => {
                     width={width}
                     height={height}
                     style={modalStyle}
-                    isDaumPost={post.isaumPost}
+                    isDaumPost={post.isDaumPost}
                     /> :
                 null
             }
             <div>
-                <form>
+                <form onSubmit={onSubmit}>
                     <div className="write_form">
                         <div className="row">
                             <label htmlFor="join_id" className="label">아이디 *</label>
                             <div className="input_box id">
-                                <input id="join_id" type="text" name="strId" maxLength="16" placeholder="아이디를 입력해주세요"/>
+                                <input id="join_id" type="text" maxLength="16" placeholder="아이디를 입력해주세요" value={id} onChange={onChangeId}/>
                                 <button type="button">중복체크</button>
                             </div>
                         </div>
                         <div className="row">
                             <label htmlFor="join_pw" className="label">비밀번호 *</label>
                             <div className="input_box">
-                                <input id="join_pw" type="password" name="strPwd" maxLength="16"
-                                    placeholder="비밀번호를 입력해주세요"/>
+                                <input id="join_pw" type="password" maxLength="16"
+                                    placeholder="비밀번호를 입력해주세요" value={password} onChange={onChangePassword}/>
                             </div>
                         </div>
                         <div className="row">
-                            <label htmlFor="join_pw" className="label">비밀번호 확인 *</label>
+                            <label htmlFor="join_pwck" className="label">비밀번호 확인 *</label>
                             <div  className="input_box">
-                                <input name="strPwd2" type="password" maxLength="16" />
+                                <input type="password" maxLength="16" value={passwordCheck} onChange={onChangePasswordChk}/>
+                                {passwordError && <div style={{color : "red"}}>비밀번호가 일치 하지 않습니다.</div>}
                             </div>
                         </div>
                         <div className="row">
                             <label htmlFor="join_name" className="label">이름 *</label>
                             <div  className="input_box">
-                                <input id="join_name" type="text" name="strName" maxLength="15"/>
+                                <input id="join_name" type="text" name="strName" maxLength="15" value={name} onChange={onChangeName}/>
                             </div>
                         </div>
                         <div className="row post_address">
@@ -107,29 +170,17 @@ const InfoInput = () => {
                             <div className="input_box id">
                                 <div id="react-root">
                                     <button type="button" id="portal-root" onClick={handleOpenPost}>우편번호 통합검색</button>
-                                    {/* {
-                                        post.isDaumPost ? 
-                                        <DaumPostcode 
-                                            onComplete={handleComplete}
-                                            autoClose
-                                            width={width}
-                                            height={height}
-                                            style={modalStyle}
-                                            isDaumPost={post.isaumPost}
-                                            /> :
-                                        null
-                                    } */}
-                                    <input type="text" name="strZip" readOnly id="extraAddress"/>
+                                    <input type="text" name="strZip" id="extraAddress" />
                                 </div>
-                                <input type="text" name="strAddr1" id="fullAddress" maxLength="200" />
-                                <input type="text" name="strAddr2" id="strAddr2" maxLength="200" />
+                                <input type="text" name="strAddr1" id="fullAddress" maxLength="200"/>
+                                <input type="text" name="strAddr2" id="strAddr2" maxLength="200"value={deAddress} onChange={onDetailAddress} />
                             </div>
                         </div>
                         <div className="row join_phone">
                             <label htmlFor="join_phone" className="label">휴대폰번호 *</label>
                             <div className="input_box phone">
                                 <div className="phone_input">
-                                    <input type="number" name="strMobil1"/>
+                                    <input type="number" name="strMobil1" value={phone} onChange={onPhoneNum}/>
                                 </div>
                                 <div className="marketing">
                                     <strong>마케팅 활용 동의</strong>
@@ -145,10 +196,10 @@ const InfoInput = () => {
                             </div>
                         </div>
                         <div className="row join_email">
-                            <label htmlFor="join_email" className="label">추가 이메일 *</label>
+                            <label htmlFor="join_email" className="label">이메일 *</label>
                             <div className="input_box email">
                                 <div className="email_input">
-                                    <input type="text" name="strEmail1" maxLength="50" />
+                                    <input type="text" name="strEmail1" maxLength="50" value={email} onChange={onEmail}/>
                                 </div>
                                 <div className="marketing">
                                     <strong>마케팅 활용 동의</strong>

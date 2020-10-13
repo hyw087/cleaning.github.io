@@ -42,33 +42,6 @@ function getSteps() {
     return ['약관동의', '정보입력', '가입완료'];
 }
 
-// function getStepContent(stepIndex) {
-
-//     switch (stepIndex) {
-//         case 0:
-        
-//         return (
-//             <>
-//                 <Terms onCheck={(checkedTarget) => {
-//                     if(checkedTarget === true) {
-
-//                     } else {
-                        
-//                     }
-//                 } }/>
-//             </>
-//         );
-//         case 1:
-//         return 'What is an ad group anyways?';
-//         case 2:
-//         return 'This is the bit I really care about!';
-//         default:
-//         return 'Unknown stepIndex';
-//     }
-// }
-
-
-
 export default function HorizontalLabelPositionBelowStepper() {
     const classes = useStyles();
     const [activeStep, setActiveStep] = React.useState(0);
@@ -104,7 +77,7 @@ export default function HorizontalLabelPositionBelowStepper() {
             return (
                 <>
                     <Terms onCheck={(checkedTarget) => {
-                        // console.dir(checkedTarget.target);
+                        // console.dir(checkedTarget.target)
                         // console.dir(checkedTarget);
                         setChecked({
                             ...checked,
@@ -112,8 +85,8 @@ export default function HorizontalLabelPositionBelowStepper() {
                             // []안감싸줄때는 무조건 String으로만 쓸때
                             [checkedTarget.target.id] : checkedTarget.target.checked,
                         })
-                        // console.log([checkedTarget.target.id]);
-                        // console.log([checkedTarget.target.checked]);
+                        console.log([checkedTarget.target]);
+                        console.log([checkedTarget.target.checked]);
                     }}/>
                 </>
             );
@@ -149,7 +122,9 @@ export default function HorizontalLabelPositionBelowStepper() {
         <div>
             {activeStep === steps.length ? (
             <div>
-                <Typography className={classes.instructions}><Link to ="/LogIn" className={classes.LogInButton}>{'로그인'}</Link></Typography>
+                {/* <Typography className={classes.instructions}> */}
+                    <Link to ="/LogIn" className={classes.LogInButton}>{'로그인'}</Link>
+                {/* </Typography> */}
                 {/* <Button onClick={handleReset}>Reset</Button> */}
             </div>
             ) : (
@@ -165,7 +140,7 @@ export default function HorizontalLabelPositionBelowStepper() {
                 </Button>
                 <Button variant="contained" color="primary" onClick={handleNext}>
                     {/* 완료 클릭시 Link줘서 회원가입이 완료되었습니다 나오게끔 */}
-                    {activeStep === steps.length - 1 ? <Link to ="/LogIn" className={classes.LogInButton}>{'로그인'}</Link> : '다음'}
+                    {activeStep === steps.length - 1 ? <Link to ="/LogIn" className={classes.LogInButton}>{'로그인'}</Link> : activeStep ? '가입하기' : '다음'}
                 </Button>
                 </div>
             </div>

@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+/* eslint no-use-before-define: 0 */
+import React, { useEffect, useState } from 'react'
 import DaumPostcode from 'react-daum-postcode'
 import '../MemberModifiy.css'
+import axios from 'axios';
+
 
 const MemberModifiy = () => {
     const [post, setPost] = useState(
@@ -16,6 +19,32 @@ const MemberModifiy = () => {
         }
         )
         // console.log(post);
+    const [users, setUsers] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [error , setError] = useState(null);
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                setError(null);
+                setUsers(null);
+                setLoading(true);
+                const response = await axios.get(
+                  'https://jsonplaceholder.typicode.com/users'  
+                );
+                setUsers(response.data);
+                console.log(response.data);
+            } catch (error) {
+                setError(error)
+            }
+            setLoading(false)
+        }
+        fetchUsers();
+    },[]);
+
+    if(loading) return <div>로딩중,.</div>
+    if(error) return <div>에러발생,.</div>
+    if(!users) return null;
     
     const handleOpenPost = () => {
         setPost({
@@ -75,14 +104,14 @@ const MemberModifiy = () => {
                     <div class="row">
                         <label for="join_id" class="label">아이디 *</label>
                         <div class="input_box id">
-                            <p class="value">dddidce1</p>
+                            <input class="value" value={users[0].id}/>
                         </div>
                     </div>
                     <div class="row pw_modify">
                         <label for="join_pw" class="label">새 비밀번호 *</label>
                         <div class="input_box">
                             {/* <button type="button" onclick={myFunction} className="btn_pw_change">비밀번호 변경 +</button> */}
-                                <input id="new_pw" type="password" name="strPwd" maxlength="16" placeholder="8~16자의 영문소문자/숫자/특수문자를 사용하세요." onchange="pwdcheck(this.value);" />
+                                <input id="new_pw" type="password" name="strPwd" maxlength="16" placeholder="8~16자의 영문소문자/숫자/특수문자를 사용하세요." />
                             {/* <ul class="pw_box" id="myDropdown">
                                 <li>
                                     <label for="new_pw">새 비밀번호 *</label>
@@ -97,7 +126,7 @@ const MemberModifiy = () => {
                     <div class="row">
                         <label for="join_name" class="label">이름 *</label>
                         <div class="input_box name">
-                            <input type="text" id="join_name" name="strName" maxlength="15" value="곽유신" />
+                            <input type="text" id="join_name" name="strName" maxlength="15" value={users[0].name} />
                         </div>
                     </div>
                     <div className="row post_address">
@@ -105,17 +134,17 @@ const MemberModifiy = () => {
                                 <div className="input_box id">
                                     <div id="react-root">
                                         <button type="button" id="portal-root" onClick={handleOpenPost}>우편번호 통합검색</button>
-                                        <input type="text" name="strZip" readOnly id="extraAddress"/>
+                                        <input type="text" name="strZip" readOnly id="extraAddress" value={users[0].address.zipcode}/>
                                     </div>
-                                    <input type="text" name="strAddr1" id="fullAddress" maxLength="200" />
-                                    <input type="text" name="strAddr2" id="strAddr2" maxLength="200" />
+                                    <input type="text" name="strAddr1" id="fullAddress" maxLength="200" value={users[0].address.street}/>
+                                    <input type="text" name="strAddr2" id="strAddr2" maxLength="200" value={users[0].address.suite} />
                                 </div>
                             </div>
                     <div class="row join_phone">
                         <label for="write_phone" class="label input_height">연락처 *</label>
                         <div class="input_box phone">
                             <div class="phone_input">
-                                    <input type="number" name="strMobil1" maxlength="3" value="01049426071"/>
+                                <input type="text" name="strMobil1" value={users[0].phone}/>
                             </div>
                             <div className="marketing">
                                 <strong className="cur">마케팅 활용 동의</strong>
@@ -134,7 +163,7 @@ const MemberModifiy = () => {
                                 <label htmlFor="join_email" className="label">추가 이메일 *</label>
                                 <div className="input_box email">
                                     <div className="email_input">
-                                        <input type="text" name="strEmail1" maxLength="50" value="ddidce@gmail.com" />
+                                        <input type="text" name="strEmail1" maxLength="50" value={users[0].email} />
                                     </div>
                                     {/* Member => Member Modifiy */}
                                     <div className="marketing Member">

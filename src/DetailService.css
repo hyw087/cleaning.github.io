@@ -1,0 +1,83 @@
+.service{
+    width: 840px; height:650px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.con{
+    width: 400px; height: 200px;
+    margin: 10px 10px;
+}
+.link{
+    color:white;
+    text-decoration: none;
+    display: inline-block;
+    width: 400px; height: 200px;
+    position: relative;
+}
+.img{
+    width: 400px; height: 200px;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),
+    url("../src/assets/images/service01.jpg");
+    position: relative;
+}
+.img2{
+    width: 400px; height: 200px;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), 
+    url("../src/assets/images/public01.jpg");
+    position: relative;
+}
+.img3{
+    width: 400px; height: 200px;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), 
+    url("../src//assets/images/classroom.jpg");
+    position: relative;
+}
+.img4{
+    width: 400px; height: 200px;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), 
+    url("../src/assets/images/hospital.jpg");
+    position: relative;
+}
+.img5{
+    width: 400px; height: 200px;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), 
+    url("../src/assets/images/restaurant01.jpg");
+    position: relative;
+}
+.img6{
+    width: 400px; height: 200px;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), 
+    url("../src/assets/images/service05.jpg");
+    position: relative;
+}
+.hov{
+    position: relative;
+    display:block;
+    width: 400px; height: 200px;
+}
+.hov:hover{
+    background-color:rgba(39, 137, 246, 0.6)
+}
+.introduce{
+    text-shadow: 1px 1px 2px #666666;
+    position:absolute;
+    top: 80px;
+    right: 80px;
+}
+.icon{
+    position: relative;
+    width:93px; 
+    height:69px;
+    top:60px;
+    left:70px;
+}
+.intro::before{
+    position: absolute;
+    content: " ";
+    border: 0px solid #ffffff;
+    background-color: #fff;
+    width: 1px;
+    height: 35px;
+    left: -35px;
+}

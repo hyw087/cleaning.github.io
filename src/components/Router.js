@@ -7,6 +7,8 @@ import SignUp from '../routes/SignUp';
 import LogIn from '../routes/LogIn';
 import InfoInput from '../routes/InfoInput';
 import MemberModifiy from '../routes/MemberModifiy';
+import DetailService from '../routes/DetailService';
+// import DetailService from '../routes/DetailService';
 
 
 const AppRouter = ({isLoggedIn}) => {
@@ -36,6 +38,10 @@ const AppRouter = ({isLoggedIn}) => {
 
                     <Route exact path="/asddsad">
                         <MemberModifiy />
+                    </Route>
+                    
+                    <Route exact path="/DetailService">
+                        <DetailService />
                     </Route>
                 )
             </Switch>

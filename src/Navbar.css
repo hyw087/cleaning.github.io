@@ -6,8 +6,9 @@ nav {
 }
 
 nav .navbar-left {
-    position: absolute;
-    left: 50px;
+    position: relative;
+    left: 5%;
+    width: 50px;
 }
 
 nav .navbar-right {
@@ -38,4 +39,21 @@ nav .navbar-right {
 .navbar ul li a:hover {
     color: #2789F6;
     transition: all 0.3s;
+}
+.login_part {
+    position: relative;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+
+}
+.login_part li a:nth-child(1) {
+    padding: 30px 20px;
+}
+
+.login_part  .info::after,
+.login_part .login::after {
+    position: relative;
+    content: "|";
+    border: 0px solid #000;
 }

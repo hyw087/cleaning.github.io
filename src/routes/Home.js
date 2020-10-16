@@ -7,11 +7,11 @@ import Video from '../assets/videos/mainVideo.mp4'
 import '../Home.css';
 import Navbar from '../Navbar';
 
-const Home = ({user}) => {
+const Home = ({user, logout}) => {
   return (
     <div>
       {/* 네비게이션 바 */}
-      <Navbar user={user}/>
+      <Navbar user={user} logout={logout}/>
       <main>
         <section>
           <div className="main-font">

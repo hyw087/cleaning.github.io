@@ -102,7 +102,6 @@ const InfoInput = () => {
             border: "1px solid #000000",
             zIndex : 100,
         }
-        handleComplete()
     return (
         <>
             {

@@ -12,13 +12,15 @@ import MemberModifiy from '../routes/MemberModifiy';
 const AppRouter = () => {
     // console.log(isLoggedIn);
     const [user , setUser] = useState(null);
+    const logout = () => setUser(null);
     console.log(user);
+    // console.log(logout);
     // const isLogin ?
     return (
         <Router>
             <Switch>
                 <Route exact path="/">
-                    <Home user={user}/>
+                    <Home user={user} logout={logout}/>
                 </Route>
 
                 <Route exact path="/SignUp">
@@ -31,14 +33,15 @@ const AppRouter = () => {
 
                 <Route exact path="/Login"> 
                 {/* 아버지    /  아들이 준 데이터를 받음*/}
-                    <LogIn onLogin={(loginUser) => {setUser(loginUser)}}/>
+                    <LogIn 
+                        onLogin={(loginUser) => {setUser(loginUser)}}/>
                 </Route>
 
                 <Route exact path="/asd"> 
                     <InfoInput />
                 </Route>
 
-                <Route exact path="/asddsad">
+                <Route exact path="/MemberModifiy">
                     <MemberModifiy />
                 </Route>
             </Switch>

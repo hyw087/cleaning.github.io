@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link, Route } from 'react-router-dom'
 import '../DetailService.css'
-import {service_ic01} from '../assets/images/service_ic01.png'
-import {public01} from '../assets/images/public01.jpg'
-import {classroom} from '../assets/images/classroom.jpg'
-import {hospital} from '../assets/images/hospital.png'
-import{restaurant} from '../assets/images/restaurant.png'
-import{service_ic05} from '../assets/images/service_ic05.png'
+import service_ic01 from '../assets/images/service_ic01.png'
+import service_ic02 from '../assets/images/service_ic02.png'
+import school from '../assets/images/school.png'
+import hospital2 from '../assets/images/hospital2.png'
+import restaurant from '../assets/images/restaurant.png'
+import service_ic05 from '../assets/images/service_ic05.png'
 
 const DetailService = () => {
     return (
@@ -17,11 +17,10 @@ const DetailService = () => {
                     <span class="hov">
                         <img src={service_ic01}  class="icon"/>
                         <div class="introduce">
-                            <span class="intro">
+                            <span class="intro"></span>
                                  <strong class="tit">주거시설</strong>
                                 <br/>
                                 바로가기 +  
-                            </span>
                         </div>
                     </span>
                 </div>
@@ -31,7 +30,7 @@ const DetailService = () => {
             <a href="#" class="link">
                 <div class="img2">
                     <span class="hov">
-                        <img src={public01} class="icon"/>
+                        <img src={service_ic02} class="icon"/>
                         <div class="introduce">
                             <span class="intro"></span>
                                 <strong>공공시설</strong>
@@ -46,7 +45,7 @@ const DetailService = () => {
             <a href="#" class="link">
                 <div class="img3">
                     <span class="hov">
-                        <img src={classroom} class="icon"/>
+                        <img src={school} class="icon"/>
                         <div class="introduce">
                             <span class="intro"></span>
                                 <strong>교육시설</strong>
@@ -61,7 +60,7 @@ const DetailService = () => {
             <a href="#" class="link">
                 <div class="img4">
                     <span class="hov">
-                        <img src={hospital} class="icon"/>
+                        <img src={hospital2} class="icon"/>
                         <div class="introduce">
                             <span class="intro"></span>
                                 <strong>의료시설</strong>
@@ -93,11 +92,10 @@ const DetailService = () => {
                     <span class="hov">
                         <img src={service_ic05} class="icon"/>
                         <div class="introduce">
-                            <span class="intro">
+                            <span class="intro"></span>
                                 <strong>프리미엄</strong>
                                 <br/>
                                 바로가기 +
-                            </span>
                         </div>
                     </span>
                 </div>

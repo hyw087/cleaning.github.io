@@ -8,14 +8,16 @@ import hospital2 from '../assets/images/hospital2.png'
 import restaurant from '../assets/images/restaurant.png'
 import service_ic05 from '../assets/images/service_ic05.png'
 import Navbar from '../Navbar'
+import top from '../assets/images/sub_visual07.jpg'
 
 const DetailService = () => {
 
     return (
     <>
         <Navbar />
+        <img src={top} class="top_img"/>
+        <span class="top_title">Main Service</span>
     <section class="service">
-        <h1 class="mainTitle">Main Service</h1><br/>
         <div class="con">
                 <Link to="#" target="_blank">
                 <div class="img">

@@ -1,19 +1,30 @@
 *{
     overflow-x: hidden;
 }
-.mainTitle{
-    margin: 5px; 
-    text-align: center;
+.top_img{
     display: block;
-    width:800px;
+    position: relative;
+    width:1600px;
+    margin: 0px auto;
+}
+.top_title{
+    display: block;
+    position: relative;
+    text-align: center;
+    text-shadow: 1px 1px 2px #666666;
+    top: -140px;
+    font-size: 30px;
+    font-weight: 650;
+    color: #fff;
 }
 .service{
     justify-content: center;
-    width: 1000px; height:100%;
+    width: 1000px;
+    height: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0px auto;
+    margin : -30px auto 30px;
 }
 .con{
     width: 400px; height: 200px;
@@ -69,6 +80,7 @@
     width: 400px; height: 200px;
 }
 .hov:hover{
+    transition: all 0.5s;
     background-color:rgba(39, 137, 246, 0.6)
 }
 .introduce{

@@ -23,7 +23,7 @@ const AppRouter = () => {
             <Switch>
                  (
                     <Route exact path="/">
-                        <Home />
+                        <Home user={user} logout={logout}/>
                     </Route>
 
                     <Route exact path="/SignUp">
@@ -35,7 +35,7 @@ const AppRouter = () => {
                     </Route>
 
                     <Route exact path="/Login"> 
-                        <LogIn />
+                        <LogIn onLogin={(loginUser) => {setUser(loginUser)}}/>
                     </Route>
 
                     <Route exact path="/asd"> 

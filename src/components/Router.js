@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import SignUp from '../routes/signUp';
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from '../routes/Home';
@@ -11,11 +11,17 @@ import DetailService from '../routes/DetailService';
 // import DetailService from '../routes/DetailService';
 
 
-const AppRouter = ({isLoggedIn}) => {
+const AppRouter = () => {
+    // console.log(isLoggedIn);
+    const [user , setUser] = useState(null);
+    const logout = () => setUser(null);
+    console.log(user);
+    // console.log(logout);
+    // const isLogin ?
     return (
         <Router>
             <Switch>
-                {isLoggedIn} (
+                 (
                     <Route exact path="/">
                         <Home />
                     </Route>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link, Route } from 'react-router-dom'
 import '../DetailService.css'
 import service_ic01 from '../assets/images/service_ic01.png'
@@ -7,10 +7,15 @@ import school from '../assets/images/school.png'
 import hospital2 from '../assets/images/hospital2.png'
 import restaurant from '../assets/images/restaurant.png'
 import service_ic05 from '../assets/images/service_ic05.png'
+import Navbar from '../Navbar'
 
 const DetailService = () => {
+
     return (
-        <div class="service">
+    <>
+        <Navbar />
+    <section class="service">
+        <h1 class="mainTitle">Main Service</h1><br/>
         <div class="con">
                 <Link to="#" target="_blank">
                 <div class="img">
@@ -27,7 +32,7 @@ const DetailService = () => {
             </Link>
         </div>
         <div class="con">
-            <a href="#" class="link">
+            <Link to="#" target="_blank">
                 <div class="img2">
                     <span class="hov">
                         <img src={service_ic02} class="icon"/>
@@ -39,10 +44,10 @@ const DetailService = () => {
                         </div>
                     </span>
                 </div>
-            </a>
+            </Link>
         </div>
         <div class="con">
-            <a href="#" class="link">
+            <Link to="#" target="_blank">
                 <div class="img3">
                     <span class="hov">
                         <img src={school} class="icon"/>
@@ -54,10 +59,10 @@ const DetailService = () => {
                         </div>
                     </span>
                 </div>
-            </a>
+            </Link>
         </div>
         <div class="con">
-            <a href="#" class="link">
+            <Link to="#" target="_blank">
                 <div class="img4">
                     <span class="hov">
                         <img src={hospital2} class="icon"/>
@@ -69,10 +74,10 @@ const DetailService = () => {
                         </div>
                     </span>
                 </div>
-            </a>
+            </Link>
         </div>
         <div class="con">
-            <a href="#" class="link">
+            <Link to="#" target="_blank">   
                 <div class="img5">
                     <span class="hov">
                         <img src={restaurant} class="icon"/>
@@ -84,10 +89,10 @@ const DetailService = () => {
                         </div>
                     </span>
                 </div>
-            </a>
+            </Link>
         </div>
         <div class="con">
-            <a href="#" class="link">
+            <Link to="#" target="_blank">
                 <div class="img6">
                     <span class="hov">
                         <img src={service_ic05} class="icon"/>
@@ -99,12 +104,13 @@ const DetailService = () => {
                         </div>
                     </span>
                 </div>
-            </a>
+            </Link>
         </div>
         <Route>
             {/* <House/> */}
         </Route>
-    </div>
+    </section>
+    </>
     )
 }
 

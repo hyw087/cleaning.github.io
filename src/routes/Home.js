@@ -1,20 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
 import Service from '../Service';
 import Slide from '../Slide'
 import About from '../About'
 import Footer from '../Footer';
 import Video from '../assets/videos/mainVideo.mp4'
 import '../Home.css';
-// import { Navbar } from 'react-bootstrap';
 import Navbar from '../Navbar';
 
-const Home = () => {
+const Home = ({user, logout}) => {
   return (
     <div>
       {/* 네비게이션 바 */}
-      <Navbar />
-          
+      <Navbar user={user} logout={logout}/>
       <main>
         <section>
           <div className="main-font">

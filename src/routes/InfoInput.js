@@ -1,5 +1,4 @@
-import { text } from '@fortawesome/fontawesome-svg-core';
-import React, {useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import DaumPostcode from 'react-daum-postcode';
 import '../InfoInput.css'
 
@@ -7,19 +6,17 @@ import '../InfoInput.css'
 const InfoInput = () => {
     const [post, setPost] = useState(
         {
-            zoneCode : [""],
+            zoneCode : "",
             fullAddress : "",
             isDaumPost : false,
         }
     );
-        // console.log(post)
     const [id,setId] = useState('');
     const [password,setPassword] = useState('');
     const [passwordCheck,setPasswordCheck] = useState('');
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
-    // detailedAddress => deAddress
     const [deAddress, setDeAddress] = useState('');
     const [passwordError,setPasswordError] = useState(false);
 
@@ -69,25 +66,8 @@ const InfoInput = () => {
         setEmail(e.target.value);
     }
 
-    const onFullAddress = e => {
-        setPost({
-            fullAddress : e.target.value
-        })
-        this.props.bind(e.target.name, e.target.value);
-    }
-
     const onDetailAddress = e => {
         setDeAddress(e.target.value);
-    }
-    
-    const handleOpenPost = () => {
-        setPost({
-            ...post,
-            isDaumPost : true,
-            // [e.target] : e.target.value,
-            // fullAddress : e.target.value,
-        })
-        // console.log([e.target]);
     }
 
     const handleComplete = (data) => {
@@ -103,12 +83,14 @@ const InfoInput = () => {
             }
             fullAddress += (extraAddress !== '' ? '' : '');
         }
-        document.getElementById("extraAddress").value = extraAddress;
-        document.getElementById("fullAddress").value = fullAddress;
-        
-        //console.log(data.address);  // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
-        //console.log(data.fullAddress);  // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
-        //console.dir(data);
+
+        setPost({
+            ...post,
+            isDaumPost : true,
+            fullAddress : fullAddress,
+            zoneCode : extraAddress,
+
+        })
     }
 
         const width = '450px';
@@ -119,7 +101,6 @@ const InfoInput = () => {
             left: '21.9%',
             border: "1px solid #000000",
             zIndex : 100,
-            // overflow: "hidden"
         }
     return (
         <>
@@ -169,10 +150,10 @@ const InfoInput = () => {
                             <label htmlFor="join_address" className="label">주소 *</label>
                             <div className="input_box id">
                                 <div id="react-root">
-                                    <button type="button" id="portal-root" onClick={handleOpenPost}>우편번호 통합검색</button>
-                                    <input type="text" name="strZip" id="extraAddress" />
+                                    <button type="button" id="portal-root" onClick={handleComplete}>우편번호 통합검색</button>
+                                    <input type="text" name="strZip" id="extraAddress" value={post.zoneCode}/>
                                 </div>
-                                <input type="text" name="strAddr1" id="fullAddress" maxLength="200"/>
+                                <input type="text" name="strAddr1" id="fullAddress" maxLength="200" value={post.fullAddress}/>
                                 <input type="text" name="strAddr2" id="strAddr2" maxLength="200"value={deAddress} onChange={onDetailAddress} />
                             </div>
                         </div>

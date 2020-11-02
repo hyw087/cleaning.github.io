@@ -1,17 +1,20 @@
-import React from 'react';
-import Service from '../Service';
-import Slide from '../Slide'
-import About from '../About'
-import Footer from '../Footer';
-import Video from '../assets/videos/mainVideo.mp4'
-import '../Home.css';
-import Navbar from '../Navbar';
+/** @format */
 
-const Home = ({user, logout}) => {
+import React from "react";
+import Service from "../Service";
+import Slide from "../Slide";
+import About from "../About";
+import Footer from "../Footer";
+import Video from "../assets/videos/mainVideo.mp4";
+import "../Home.css";
+import Navbar from "../Navbar";
+
+const Home = ({ user, logout }) => {
   return (
     <div>
       {/* 네비게이션 바 */}
-      <Navbar user={user} logout={logout}/>
+
+      <Navbar user={user} logout={logout} />
       <main>
         <section>
           <div className="main-font">
@@ -20,10 +23,10 @@ const Home = ({user, logout}) => {
             <h1>cleaning</h1>
           </div>
           <video autoPlay loop muted>
-            <source src={Video} type="video/mp4"/>
+            <source src={Video} type="video/mp4" />
           </video>
           <div className="bgWith"></div>
-        </section>  
+        </section>
         {/* 회사소개 */}
         <About />
         {/* 기관 설명 */}
@@ -36,7 +39,7 @@ const Home = ({user, logout}) => {
 
       {/* <Route path="/" component={Home} exact /> */}
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

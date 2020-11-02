@@ -1,0 +1,59 @@
+.join_form .join_tit {
+    position: relative;
+}
+
+.join_form .join_tit h4 {
+    padding: 0 0 10px 0;
+    font-size: 1.375rem;
+    font-weight: 500;
+    color: #333;
+    border-bottom: 2px solid #333;
+    text-align: left;
+}
+
+.join_form .join_tit .chk_box {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    padding: 0;
+}
+
+.join_form .join_tit .chk_box input[type="checkbox"]+label p {
+    font-size: 1rem;
+}
+
+.join_form .join_tit .chk_box input[type="checkbox"]+label span {
+    margin: 0 0 0 10px;
+}
+
+.join_form>strong {
+    display: block;
+    padding: 25px 0 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.join_form .data_box {
+    box-sizing: border-box;
+    overflow-y: scroll;
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    background-color: #f6f6f6;
+    border: 1px solid #ddd;
+}
+
+.join_form .chk_box {
+    padding: 15px 0 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.join_form .chk_box input {
+    position: relative;
+    top: -6px;
+    margin-right: 10px;
+}

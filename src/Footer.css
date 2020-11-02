@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap");
+
+.footer-contents {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color:  #2789F6;
+    color: #fff;
+}
+
+.footer-contents footer {
+    max-width: 100%;
+    /* position: absolute; */
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer-contents .footer-contents_f,
+.footer-contents .footer-contents_s,
+.footer-contents .footer-contents_t {
+    font-size: 16px;
+    /* margin: 0 50px; */
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.footer-contents .footer-contents_f p,
+.footer-contents .footer-contents_s p,
+.footer-contents .footer-contents_t p{
+    padding-top: 10px;
+}
+
+
+
+
+.footer-contents .footer-contents_f::after {
+    content: "";
+    position: absolute;
+    border: 1px solid #fff;
+    height: 60px;
+    left: 25%;
+    top: 25%;
+}
+
+.footer-contents .footer-contents_s::after {
+    content: "";
+    position: absolute;
+    border: 1px solid #fff;
+    height: 60px;
+    left: 50%;
+    top: 25%;
+}
+
+.footer-contents .footer-contents_t::after {
+    content: "";
+    position: absolute;
+    border: 1px solid #fff;
+    height: 60px;
+    left: 75%;
+    top: 25%;
+}
+
+.footer-contents .footer-contents_f:nth-child(1) {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+}
+
+.footer-contents .footer-contents_ss {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+}
+
+.footer-contents .footer-contents_sf {
+    color: #fff;
+    font-size: 20px;
+    top: -10%;
+    position: relative;
+}
+
+.footer-contents .footer-contents_sf ul{
+    display: flex;
+}
+
+.footer-contents .footer-contents_sf ul li {
+    padding: 0 10px;
+}

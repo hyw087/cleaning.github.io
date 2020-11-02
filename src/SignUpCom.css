@@ -1,0 +1,39 @@
+.join_complete {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join_complete .join_complete_contents {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 150px;
+    border: 1px solid #ddd;
+}
+
+.join_complete strong {
+    display: block;
+    font-size: 1.875rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.join_complete p {
+    display: block;
+    line-height: 2.2;
+    font-size: 1.125rem;
+    color: #333;
+}
+
+.join_complete img {
+    display: block;
+    margin: 30px auto 50px;
+}

@@ -14,11 +14,12 @@ const LogIn = ({ onLogin }) => {
   const resUser = sessionStorage.setItem("User", JSON.stringify(tempUser));
   console.log(resUser);
 
-  const onChangeId = e => {
+  const onChangeId = (e) => {
     setId(e.target.value);
   };
+  console.log(id);
 
-  const onChangePassword = e => {
+  const onChangePassword = (e) => {
     setPassword(e.target.value);
   };
 
@@ -33,7 +34,7 @@ const LogIn = ({ onLogin }) => {
   };
 
   useEffect(() => {
-    const fetchUsers = async i => {
+    const fetchUsers = async (i) => {
       try {
         const response = await axios.get(
           "https://raw.githubusercontent.com/ddidce/cleaning.github.io/master/data.json"

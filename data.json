@@ -1,50 +1,56 @@
 {
     "emergencyContacts": [
       {
+        "id" : 1,
         "name": "곽유신",
         "phone": "01049426071",
         "email": "ddidce@gmail.com",
-        "id": "ddidce",
+        "user_id": "ddidce",
         "password": "skg04102",
         "address": "서울시 성북구 월계동"
       },
       {
+        "id" : 2,
         "name": "박혜원",
         "phone": "01049426072",
         "email": "ddidce@naver.com",
-        "id": "ddidce1",
+        "user_id": "ddidce1",
         "password": "skg04103",
         "address": "서울시 강서구 무슨동"
       },
       {
+        "id" : 3,
         "name": "송난",
         "phone": "01049426073",
         "email": "ddidce@daum.com",
-        "id": "ddidce2",
+        "user_id": "ddidce2",
         "password": "skg04104",
         "address": "이천시 무슨구 무슨동"
       },
       {
+        "id" : 4,
         "name": "김현수",
         "phone": "01049426074",
         "email": "ddidce@hanmail.com",
-        "id": "ddidce3",
+        "user_id": "ddidce3",
         "password": "skg04105",
         "address": "서울시 은평구 무슨동"
       },
       {
+        "id" : 5,
         "name": "손지성",
         "phone": "01049426075",
         "email": "ddidce@empas.com",
-        "id": "ddidce4",
+        "user_id": "ddidce4",
         "password": "skg04106",
         "address": "서울시 노원구 상계동"
       },
       {
+        "id" : 6,
         "name": "함영우",
         "phone": "01049426076",
         "email": "ddidce@chrome.com",
-        "id": "ddidce5",
+        "user_id": "ddidce5",
         "password": "skg04107",
         "address": "서울시 종로구 종로"
       }

@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 // import SignUp from '../routes/signUp';
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
@@ -12,7 +14,7 @@ const AppRouter = () => {
   // console.log(isLoggedIn);
   const [user, setUser] = useState(null);
   const logout = () => setUser(null);
-  console.log(user);
+  const cureentUser = JSON.parse(sessionStorage.getItem("User"));
   // console.log(logout);
   // const isLogin ?
   return (
@@ -44,7 +46,7 @@ const AppRouter = () => {
         </Route>
 
         <Route exact path="/MemberModifiy">
-          <MemberModifiy />
+          <MemberModifiy cureentUser={cureentUser} />
         </Route>
       </Switch>
     </Router>

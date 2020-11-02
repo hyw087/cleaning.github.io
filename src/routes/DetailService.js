@@ -15,17 +15,17 @@ const DetailService = () => {
     return (
     <>
         <Navbar />
-        <img src={top} class="top_img"/>
-        <span class="top_title">Main Service</span>
-    <section class="service">
-        <div class="con">
+        <img src={top} className="top_img"/>
+        <span className="top_title">Main Service</span>
+    <section className="service">
+        <div className="con">
                 <Link to="#" target="_blank">
-                <div class="img">
-                    <span class="hov">
-                        <img src={service_ic01}  class="icon"/>
-                        <div class="introduce">
-                            <span class="intro"></span>
-                                 <strong class="tit">주거시설</strong>
+                <div className="img">
+                    <span className="hov">
+                        <img src={service_ic01}  className="icon"/>
+                        <div className="introduce">
+                            <span className="intro"></span>
+                                 <strong className="tit">주거시설</strong>
                                 <br/>
                                 바로가기 +  
                         </div>
@@ -33,13 +33,13 @@ const DetailService = () => {
                 </div>
             </Link>
         </div>
-        <div class="con">
+        <div className="con">
             <Link to="#" target="_blank">
-                <div class="img2">
-                    <span class="hov">
-                        <img src={service_ic02} class="icon"/>
-                        <div class="introduce">
-                            <span class="intro"></span>
+                <div className="img2">
+                    <span className="hov">
+                        <img src={service_ic02} className="icon"/>
+                        <div className="introduce">
+                            <span className="intro"></span>
                                 <strong>공공시설</strong>
                                 <br/>
                                 바로가기 +
@@ -48,13 +48,13 @@ const DetailService = () => {
                 </div>
             </Link>
         </div>
-        <div class="con">
+        <div className="con">
             <Link to="#" target="_blank">
-                <div class="img3">
-                    <span class="hov">
-                        <img src={school} class="icon"/>
-                        <div class="introduce">
-                            <span class="intro"></span>
+                <div className="img3">
+                    <span className="hov">
+                        <img src={school} className="icon"/>
+                        <div className="introduce">
+                            <span className="intro"></span>
                                 <strong>교육시설</strong>
                                 <br/>
                                 바로가기 +
@@ -63,13 +63,13 @@ const DetailService = () => {
                 </div>
             </Link>
         </div>
-        <div class="con">
+        <div className="con">
             <Link to="#" target="_blank">
-                <div class="img4">
-                    <span class="hov">
-                        <img src={hospital2} class="icon"/>
-                        <div class="introduce">
-                            <span class="intro"></span>
+                <div className="img4">
+                    <span className="hov">
+                        <img src={hospital2} className="icon"/>
+                        <div className="introduce">
+                            <span className="intro"></span>
                                 <strong>의료시설</strong>
                                 <br/>
                                 바로가기 +
@@ -78,13 +78,13 @@ const DetailService = () => {
                 </div>
             </Link>
         </div>
-        <div class="con">
+        <div className="con">
             <Link to="#" target="_blank">   
-                <div class="img5">
-                    <span class="hov">
-                        <img src={restaurant} class="icon"/>
-                        <div class="introduce">
-                            <span class="intro"></span>
+                <div className="img5">
+                    <span className="hov">
+                        <img src={restaurant} className="icon"/>
+                        <div className="introduce">
+                            <span className="intro"></span>
                                 <strong>요식업</strong>
                                 <br/>
                                 바로가기 +
@@ -93,13 +93,13 @@ const DetailService = () => {
                 </div>
             </Link>
         </div>
-        <div class="con">
+        <div className="con">
             <Link to="#" target="_blank">
-                <div class="img6">
-                    <span class="hov">
-                        <img src={service_ic05} class="icon"/>
-                        <div class="introduce">
-                            <span class="intro"></span>
+                <div className="img6">
+                    <span className="hov">
+                        <img src={service_ic05} className="icon"/>
+                        <div className="introduce">
+                            <span className="intro"></span>
                                 <strong>프리미엄</strong>
                                 <br/>
                                 바로가기 +

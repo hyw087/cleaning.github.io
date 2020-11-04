@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 import DaumPostcode from "react-daum-postcode";
 import "../MemberModifiy.css";
 import axios from "axios";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const MemberModifiy = ({ cureentUser }) => {
   const [post, setPost] = useState({
@@ -21,12 +21,11 @@ const MemberModifiy = ({ cureentUser }) => {
     isRegister: false,
     register: [],
   });
-  // console.log(post);
+
   const [users, setUsers] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const history = useHistory();
-  let { id } = useParams();
 
   const onClickBtn = () => {
     //DB값 받아서 설정이 되게끔 해야함
@@ -40,8 +39,12 @@ const MemberModifiy = ({ cureentUser }) => {
         setError(null);
         setUsers(null);
         setLoading(true);
-        const response = await axios.get(
-          "https://jsonplaceholder.typicode.com/users"
+        const response = await axios.post(
+          "https://jsonplaceholder.typicode.com/users",
+          {
+            method: "POST",
+            data: setUsers,
+          }
         );
         setUsers(response.data);
         console.log(response.data);
@@ -64,7 +67,7 @@ const MemberModifiy = ({ cureentUser }) => {
     });
   };
 
-  const handleComplete = data => {
+  const handleComplete = (data) => {
     let fullAddress = data.address;
     let extraAddress = "";
 
@@ -92,9 +95,8 @@ const MemberModifiy = ({ cureentUser }) => {
     left: "25%",
     border: "1px solid #000000",
     zIndex: 100,
-    // overflow: "hidden"
   };
-  console.log(cureentUser);
+
   return (
     <>
       {post.isDaumPost ? (
@@ -123,7 +125,7 @@ const MemberModifiy = ({ cureentUser }) => {
                 아이디 *
               </label>
               <div className="input_box id">
-                <input className="value" value={cureentUser.id} readOnly />
+                <input className="value" value={cureentUser.user_id} readOnly />
               </div>
             </div>
             <div className="row pw_modify">
@@ -131,7 +133,6 @@ const MemberModifiy = ({ cureentUser }) => {
                 새 비밀번호 *
               </label>
               <div className="input_box">
-                {/* <button type="button" onclick={myFunction} classNameName="btn_pw_change">비밀번호 변경 +</button> */}
                 <input
                   id="new_pw"
                   type="password"
@@ -139,15 +140,6 @@ const MemberModifiy = ({ cureentUser }) => {
                   maxLength="16"
                   placeholder="8~16자의 영문소문자/숫자/특수문자를 사용하세요."
                 />
-                {/* <ul className="pw_box" id="myDropdown">
-                                <li>
-                                    <label htmlFor="new_pw">새 비밀번호 *</label>
-                                </li>
-                                <li>
-                                    <label htmlFor="new_pw_check">새 비밀번호 확인 *</label>
-                                    <input id="new_pw_check" name="strPwd2" type="password" maxLength="16" onchange="pwdcheck2(this.value);" />
-                                </li>
-                            </ul> */}
               </div>
             </div>
             <div className="row">

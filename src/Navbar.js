@@ -1,15 +1,13 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../src/Navbar.css";
 
-const Navbar = ({ user, logout }) => {
+const Navbar = ({ logout }) => {
   const cureentUser = JSON.parse(sessionStorage.getItem("User"));
-  const history = useHistory();
   const onLogout = () => {
     logout();
     sessionStorage.clear();
     window.location.href = "/";
-    // history.push("/");
   };
   return (
     <header className="navbar">

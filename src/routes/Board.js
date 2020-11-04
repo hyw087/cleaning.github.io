@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Board.css';
-import sub_visual06 from '../assets/images/sub_visual06.jpg';
+
 import { Link } from 'react-router-dom';
 
 const Board = () => {
+    // 검색기능
+    const [searchTerm, setSearchTerm] = useState('');
+
     const boards = [
         {
             id: 1,
@@ -31,8 +34,20 @@ const Board = () => {
             views: '327',
         },
     ];
-    //게시글 목록을 돌려주기위해서 사용
-    const listItem = boards.map((board) => (
+
+    const handleChange = (e) => {
+        setSearchTerm(e.target.value);
+    };
+    const items = boards.filter((data) => {
+        if (searchTerm === null) {
+            return data;
+        } else if (data.title.toLowerCase().includes(searchTerm)) {
+            return data;
+        }
+    });
+    console.log(items);
+
+    const listItem = items.map((board) => (
         <tr>
             <td>{board.id}</td>
             <td className="tit">
@@ -72,11 +87,13 @@ const Board = () => {
                         className="input_search"
                         name="keyword"
                         id="keyword"
+                        onChange={handleChange}
+                        value={searchTerm}
                     />
                     <button type="submit">검색</button>
                 </form>
                 <p className="table_num">
-                    <span>{boards.length}</span>건
+                    <span>{listItem.length}</span>건
                 </p>
 
                 {/* 공지사항 리스트 */}

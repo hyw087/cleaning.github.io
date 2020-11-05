@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Board.css';
 
 import { Link } from 'react-router-dom';
@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const Board = () => {
     // 검색기능
     const [searchTerm, setSearchTerm] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
 
     const boards = [
         {
@@ -38,16 +39,28 @@ const Board = () => {
     const handleChange = (e) => {
         setSearchTerm(e.target.value);
     };
-    const items = boards.filter((data) => {
-        if (searchTerm === null) {
-            return data;
-        } else if (data.title.toLowerCase().includes(searchTerm)) {
-            return data;
-        }
-    });
-    console.log(items);
 
-    const listItem = items.map((board) => (
+    useEffect(() => {
+        const items = boards.filter((data) => {
+            if (searchTerm === null) {
+                return data;
+            } else if (data.title.toLowerCase().includes(searchTerm)) {
+                return data;
+            }
+        });
+        setSearchResults(items);
+    }, [searchTerm]);
+
+    // const items = boards.filter((data) => {
+    //     if (searchTerm === null) {
+    //         return data;
+    //     } else if (data.title.toLowerCase().includes(searchTerm)) {
+    //         return data;
+    //     }
+    // });
+    // console.log(items);
+
+    const listItem = searchResults.map((board) => (
         <tr>
             <td>{board.id}</td>
             <td className="tit">
@@ -57,6 +70,7 @@ const Board = () => {
             <td>{board.views}</td>
         </tr>
     ));
+    console.log(listItem);
     return (
         <>
             <div className="sub_visual sub_visual06">
@@ -68,7 +82,7 @@ const Board = () => {
                         </li>
 
                         <li>
-                            <Link to="/#">칭찬코너</Link>
+                            <Link to="/#">Q & A</Link>
                         </li>
                     </ul>
                 </div>

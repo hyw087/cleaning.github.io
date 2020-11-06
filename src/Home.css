@@ -6,8 +6,6 @@
     /* overflow-y: auto; */
 }
 
-
-
 .bgWith {
     position: absolute;
     animation: leftToright 1s 1s forwards;
@@ -15,8 +13,6 @@
     min-width: 100%;
     min-height: 1080px;
 }
-
-
 
 @keyframes leftToright {
     from {
@@ -46,7 +42,6 @@
     color: rgba(0, 0, 0, 0.5);
     bottom: 30px;
     left: 15px;
-
 }
 
 .main-font h1 {
@@ -82,5 +77,3 @@
     position: relative;
     bottom: 40px;
 }
-
-/* End Navbar */

@@ -12,7 +12,7 @@ const QnA = () => {
     const qna = [
         {
             id: 1,
-            title: '곽유신 팁장님 감사합니다.',
+            title: '곽유신 팀장님 감사합니다.',
             date: '2020.11.03',
             views: 5,
         },
@@ -116,7 +116,7 @@ const QnA = () => {
                             <br />
                             전문 청소 서비스의 시작! 프로젝트입니다.
                         </p>
-                        <a href="board_write.asp?bs_code=board3">칭찬하기</a>
+                        <Link to="/QnAWriteForm">질문하기</Link>
                     </div>
                 </div>
 
@@ -125,7 +125,6 @@ const QnA = () => {
                     name="searchForm"
                     class="search_form"
                     method="get"
-                    action="?"
                 >
                     <input type="hidden" name="bs_code" value="board3" />
                     <input type="hidden" name="page" value="1" />

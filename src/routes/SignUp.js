@@ -76,8 +76,6 @@ export default function HorizontalLabelPositionBelowStepper() {
                     <>
                         <Terms
                             onCheck={(checkedTarget) => {
-                                // console.dir(checkedTarget.target)
-                                // console.dir(checkedTarget);
                                 setChecked({
                                     ...checked,
                                     // 아이디가 agree01 , agree02일수도 있기때문에 []로로 감싸준다 <- 변수사용을위해서
@@ -85,8 +83,6 @@ export default function HorizontalLabelPositionBelowStepper() {
                                     [checkedTarget.target.id]:
                                         checkedTarget.target.checked,
                                 });
-                                console.log([checkedTarget.target]);
-                                console.log([checkedTarget.target.checked]);
                             }}
                         />
                     </>
@@ -103,11 +99,8 @@ export default function HorizontalLabelPositionBelowStepper() {
                         <SignUpComp />
                     </>
                 );
-            // default:
-            // return 'Unknown stepIndex';
         }
     }
-    console.log(checked);
     return (
         <div className="steper">
             {/* <Navbar /> */}

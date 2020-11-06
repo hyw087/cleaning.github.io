@@ -1,6 +1,6 @@
 .write_form {
     position: relative;
-    width: 1281px;
+    width: 1280px;
     height: 590px;
 }
 
@@ -10,7 +10,6 @@
     flex-direction: row;
     align-items: center;
     border-bottom: 1px solid #ddd;
-
 }
 
 .write_form .row .label {
@@ -72,8 +71,6 @@ button {
     color: #fff;
 }
 
-
-
 .write_form .row.post_address .label {
     height: 170px;
 }
@@ -87,9 +84,6 @@ button {
     width: 100%;
     margin: 10px 0 0 0;
 }
-
-
-
 
 .write_form .row .input_box.phone,
 .write_form .row .input_box.email {

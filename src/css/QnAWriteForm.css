@@ -1,0 +1,387 @@
+.QnA_write_form {
+    position: relative;
+    width: 1280px;
+    height: 590px;
+    margin: 0 auto;
+    border-top: 2px solid #333;
+}
+
+.qna_tit {
+    display: block;
+    padding: 0 0 50px;
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.qna_txt {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    word-break: keep-all;
+    margin-bottom: 70px;
+}
+
+.QnA_write_form .row {
+    border-bottom: 1px solid #ddd;
+}
+
+.QnA_write_form .row .input_box textarea {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    vertical-align: top;
+    border: 1px solid #ddd;
+}
+
+.QnA_write_form .row .input_box select {
+    width: 330px;
+    height: 40px;
+    padding: 0 40px 0 20px;
+    border: 1px solid #ddd;
+}
+
+.QnA_write_form .row .id input {
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.QnA_write_form .row .id button {
+    float: left;
+    background-color: #bbb;
+}
+
+.QnA_write_form .row .id p {
+    height: 40px;
+    line-height: 40px;
+}
+
+.QnA_write_form .row .email input {
+    width: 330px;
+}
+
+.QnA_write_form .row .title input {
+    width: 100%;
+}
+
+.QnA_write_form .row .phone {
+    float: left;
+}
+
+.QnA_write_form .row .phone span {
+    float: left;
+    margin: 0 5px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: top;
+    color: #333;
+}
+
+.QnA_write_form .row .file_box {
+    position: relative;
+}
+
+.QnA_write_form .row .file_box:after {
+    display: block;
+    clear: both;
+    *zoom: 1;
+    content: '';
+}
+
+.QnA_write_form .row .file_box label {
+    float: left;
+    display: block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background: #777;
+    text-align: center;
+    cursor: pointer;
+}
+
+.QnA_write_form .row .file_box input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.QnA_write_form .row.cleaning .chk_box {
+    float: left;
+    margin: 0 0 0 40px;
+}
+
+.QnA_write_form .row.cleaning .chk_box:first-child {
+    margin: 0;
+}
+
+.QnA_write_form .row.cleaning .chk_box input[type="radio"]+label p {
+    font-size: 1rem;
+}
+
+.QnA_write_form .row.datepicker {
+    height: 262px;
+}
+
+.QnA_write_form .row.datepicker .label {
+    height: 262px;
+}
+
+.QnA_write_form .row.datepicker #datepicker {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.QnA_write_form .row.cleaning_option .chk_box {
+    float: left;
+    margin: 0 0 0 40px;
+}
+
+.QnA_write_form .row.cleaning_option .chk_box:first-child {
+    margin: 0;
+}
+
+.QnA_write_form .row.cleaning_option .chk_box input[type="radio"]+label p {
+    font-size: 1rem;
+}
+
+.QnA_write_form .row.address .input_box select {
+    float: left;
+    width: calc((100% - 20px)/3);
+    margin: 0 10px 0 0;
+}
+
+.QnA_write_form .row.address .input_box input {
+    float: left;
+    width: calc((100% - 20px)/3);
+}
+
+.QnA_write_form .row.post_address {
+    height: 160px;
+}
+
+.QnA_write_form .row.post_address .label {
+    height: 160px;
+}
+
+.QnA_write_form .row.post_address .input_box div:after {
+    display: block;
+    clear: both;
+    *zoom: 1;
+    content: '';
+}
+
+.QnA_write_form .row.post_address .input_box div input {
+    float: left;
+    width: 330px;
+}
+
+.QnA_write_form .row.post_address .input_box div button {
+    float: left;
+    width: 160px;
+    margin: 0 0 0 10px;
+    background-color: #777;
+}
+
+.QnA_write_form .row.post_address .input_box>input {
+    width: 100%;
+    margin: 10px 0 0 0;
+}
+
+.QnA_write_form .row.contents {
+    height: 221px;
+}
+
+.QnA_write_form .row.contents .label {
+    height: 220px;
+}
+
+.QnA_write_praise .row.contents {
+    height: 320px;
+}
+
+.QnA_write_praise .row.contents .label {
+    height: 320px;
+}
+
+.QnA_write_form .row .pyeong input {
+    width: 330px;
+}
+
+.QnA_write_form .row .phone_input {
+    float: left;
+}
+
+.QnA_write_form .row .email_input {
+    float: left;
+}
+
+.QnA_write_form .row .marketing {
+    float: left;
+}
+
+.QnA_write_form .row .marketing strong {
+    float: left;
+    display: block;
+    line-height: 40px;
+    margin: 0 0 0 50px;
+    font-weight: 500;
+}
+
+.QnA_write_form .row .marketing .chk_box {
+    float: left;
+    margin: 0 0 0 30px;
+    height: 40px;
+    padding: 0;
+}
+
+.QnA_write_form .row .marketing .chk_box input[type="radio"]+label span {
+    height: 40px;
+    margin: 0 10px 0 0;
+    background-position: 0 center;
+}
+
+.QnA_write_form .row .marketing .chk_box input[type="radio"]+label p {
+    line-height: 40px;
+}
+
+.QnA_notice_txt {
+    margin: 20px 0 0 0;
+}
+
+.QnA_notice_txt p {
+    position: relative;
+    padding: 0 0 0 10px;
+    font-size: 0.875rem;
+    color: #999;
+    word-break: keep-all;
+}
+
+.QnA_notice_txt p:before {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    font-size: 0.875rem;
+    color: #999;
+    content: '*';
+}
+
+/* íšŒì›íƒˆí‡´ */
+.QnA_write_form .withdrawal .input_box {
+    width: 100%;
+    padding: 30px;
+}
+
+.withdrawal .input_box strong {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #222;
+}
+
+.withdrawal .input_box p {
+    margin: 10px 0 0 0;
+    color: #999;
+}
+
+.QnA_write_form .reason .label {
+    height: 220px;
+}
+
+.QnA_write_form .caution .label {
+    height: 90px;
+}
+
+.caution_list li {
+    margin: 5px 0 0 0;
+    font-size: 0.875rem;
+    color: #999;
+}
+
+.caution_list li:first-child {
+    margin: 0;
+}
+
+.QnA_write_form .row .label {
+    float: left;
+    box-sizing: border-box;
+    width: 200px;
+    height: 60px;
+    padding: 18px 0 0 40px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    background-color: #f6f6f6;
+    text-align: left;
+}
+
+.QnA_write_form .row .input_box {
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    width: calc(100% - 200px);
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+}
+
+.QnA_write_form .row .input_box input {
+    width: 390px;
+    height: 40px;
+    padding: 0 20px;
+    vertical-align: top;
+}
+
+.QnA_write_form .row .password input {
+    width: 330px;
+    margin-right: 10px;
+}
+
+.pass_chk {
+    position: relative;
+    top: 8px;
+}
+
+.QnA_write_form .row .email input {
+    width: 330px;
+}
+
+.QnA_write_form .row .title input {
+    width: 100%;
+}
+
+.QnA_write_form .row .phone input {
+    float: left;
+    width: 330px;
+}
+
+
+
+
+.btn_box>div button {
+    position: relative;
+    float: left;
+    display: block;
+    width: 120px;
+    height: 50px;
+    margin: 0 0 0 10px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    left: 50%;
+    margin-bottom: 100px;
+}
+
+.btn_box>div button.btn_list {
+    background-color: #313131;
+    border: 1px solid #313131;
+    color: #fff;
+}

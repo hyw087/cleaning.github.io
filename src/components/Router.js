@@ -11,6 +11,7 @@ import InfoInput from '../routes/InfoInput';
 import MemberModifiy from '../routes/MemberModifiy';
 import Board from '../routes/Board/Board';
 import QnA from '../routes/Board/QnA';
+import QnAWriteForm from '../routes/Board/QnAWriteForm';
 
 const AppRouter = () => {
     // console.log(isLoggedIn);
@@ -56,6 +57,9 @@ const AppRouter = () => {
                 </Route>
                 <Route exact path="/QnA">
                     <QnA />
+                </Route>
+                <Route exact path="/QnAWriteForm">
+                    <QnAWriteForm />
                 </Route>
             </Switch>
         </Router>

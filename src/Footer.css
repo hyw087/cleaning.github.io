@@ -10,7 +10,6 @@
 
 .footer-contents footer {
     max-width: 100%;
-    /* position: absolute; */
     height: 200px;
     display: flex;
     justify-content: space-evenly;
@@ -31,9 +30,6 @@
 .footer-contents .footer-contents_t p{
     padding-top: 10px;
 }
-
-
-
 
 .footer-contents .footer-contents_f::after {
     content: "";

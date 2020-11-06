@@ -1,0 +1,62 @@
+.sub_visual .inner {
+    position: relative;
+    width: 1200px;
+    height: 300px;
+    top: 0;
+    margin: 0 auto;
+}
+
+.inner_qna {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 150px;
+}
+
+.praise_top {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin: 0 0 40px 0;
+    background: url(./assets/images/praise_bg.png) repeat;
+}
+
+.praise_top div {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 40px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.praise_top div p {
+    font-size: 1.25rem;
+    color: #222;
+    word-break: keep-all;
+}
+
+.praise_top div p em {
+    display: block;
+    color: #0766ee;
+}
+
+.praise_top div a {
+    display: block;
+    box-sizing: border-box;
+    width: 130px;
+    height: 44px;
+    line-height: 42px;
+    margin: 25px auto 0;
+    font-size: 1.125rem;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #0766ee;
+    border: 1px solid #0766ee;
+    transition: all 0.3s;
+}
+
+.praise_top div a:hover {
+    background-color: #fff;
+    color: #0766ee
+}

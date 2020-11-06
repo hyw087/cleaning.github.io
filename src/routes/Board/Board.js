@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import '../Board.css';
+import '../../Board.css';
 
 import { Link } from 'react-router-dom';
+import Navbar from '../../Navbar';
+import Footer from '../../Footer';
+import BoardInfo from './BoardInfo';
 
 const Board = () => {
     // 검색기능
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    const [selectedKey, setSelectedKey] = useState(-1);
 
     const boards = [
         {
@@ -40,6 +44,11 @@ const Board = () => {
         setSearchTerm(e.target.value);
     };
 
+    const handleClick = (key) => {
+        setSelectedKey(key);
+    };
+    console.log(selectedKey + 1);
+
     useEffect(() => {
         const items = boards.filter((data) => {
             if (searchTerm === null) {
@@ -60,29 +69,30 @@ const Board = () => {
     // });
     // console.log(items);
 
-    const listItem = searchResults.map((board) => (
-        <tr>
-            <td>{board.id}</td>
-            <td className="tit">
-                <Link>{board.title}</Link>
-            </td>
-            <td>{board.date}</td>
-            <td>{board.views}</td>
-        </tr>
-    ));
-    console.log(listItem);
+    const listItem = searchResults.map((board, i) => {
+        return (
+            <BoardInfo
+                key={i}
+                board={board}
+                onClick={() => {
+                    handleClick(i);
+                }}
+            />
+        );
+    });
     return (
         <>
+            <Navbar />
             <div className="sub_visual sub_visual06">
                 <div className="inner">
                     <h2>공지사항</h2>
                     <ul className="sub_tab">
                         <li className="on">
-                            <Link to="/#">공지사항</Link>
+                            <Link to="/Board">공지사항</Link>
                         </li>
 
                         <li>
-                            <Link to="/#">Q & A</Link>
+                            <Link to="/QnA">Q & A</Link>
                         </li>
                     </ul>
                 </div>
@@ -104,7 +114,9 @@ const Board = () => {
                         onChange={handleChange}
                         value={searchTerm}
                     />
-                    <button type="submit">검색</button>
+                    <button type="submit" onClick={searchResults}>
+                        검색
+                    </button>
                 </form>
                 <p className="table_num">
                     <span>{listItem.length}</span>건
@@ -115,6 +127,7 @@ const Board = () => {
                     <tbody>{listItem}</tbody>
                 </table>
             </div>
+            <Footer />
         </>
     );
 };

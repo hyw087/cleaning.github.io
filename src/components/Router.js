@@ -9,7 +9,8 @@ import SignUp from '../routes/SignUp';
 import LogIn from '../routes/LogIn';
 import InfoInput from '../routes/InfoInput';
 import MemberModifiy from '../routes/MemberModifiy';
-import Board from '../routes/Board';
+import Board from '../routes/Board/Board';
+import QnA from '../routes/Board/QnA';
 
 const AppRouter = () => {
     // console.log(isLoggedIn);
@@ -52,6 +53,9 @@ const AppRouter = () => {
 
                 <Route exact path="/Board">
                     <Board />
+                </Route>
+                <Route exact path="/QnA">
+                    <QnA />
                 </Route>
             </Switch>
         </Router>

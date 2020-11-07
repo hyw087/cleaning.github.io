@@ -8,7 +8,9 @@
     align-items: center;
     top: -5px;
 }
-
+.about_us {
+    opacity: 0.9;
+}
 .About::before {
     content: "";
     position: absolute;

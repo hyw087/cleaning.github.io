@@ -1,8 +1,8 @@
-import React from 'react'
-import '../src/Footer.css';
+import React from 'react';
+import '../Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, } from '@fortawesome/free-brands-svg-icons';
-import { faInstagram} from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const footer = () => {
@@ -26,11 +26,24 @@ const footer = () => {
 
                 <div className="footer-contents_sf">
                     <ul>
-                        <li><FontAwesomeIcon icon={faFacebookF}/></li>
-                        <li><FontAwesomeIcon icon={faInstagram}/></li>
-                        <li><FontAwesomeIcon icon={faTwitter}/></li>
+                        <li>
+                            <a href="https://www.facebook.com/">
+                                <FontAwesomeIcon icon={faFacebookF} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/">
+                                <FontAwesomeIcon icon={faInstagram} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/">
+                                <FontAwesomeIcon icon={faTwitter} />
+                            </a>
+                        </li>
                     </ul>
                 </div>
+
                 {/* sf => second fourth */}
                 <div className="footer-contents_ss">
                     {/* Miso 이름 바꿔야함 */}
@@ -38,7 +51,7 @@ const footer = () => {
                 </div>
             </footer>
         </div>
-    )
-}
+    );
+};
 
-export default footer
+export default footer;

@@ -48,7 +48,7 @@ const AppRouter = () => {
                     <InfoInput />
                 </Route>
 
-                <Route exact path="/MemberModifiy/:id">
+                <Route exact path="/MemberModifiy/">
                     <MemberModifiy cureentUser={cureentUser} />
                 </Route>
 

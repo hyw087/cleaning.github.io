@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+.slide_ani::before {
+    content: "";
+    position: absolute;
+    border: 1.5px solid #2789F6;
+    background-color: #2789F6;
+    height: 40px;
+    top: 0;
+    left: 50%;
+}
 
 .slider {
     position: relative;
@@ -20,12 +29,12 @@
 
 .slider h2 {
     margin-bottom: 30px;
-    font-size: 50px;
+    font-size: 30px;
 }
 
 .slider p:nth-child(2) {
     width: 400px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     font-size: 18px;
     text-align: justify;
 }

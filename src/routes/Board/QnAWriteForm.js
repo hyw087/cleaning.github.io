@@ -1,6 +1,6 @@
 import { Link } from '@material-ui/core';
 import React, { useState } from 'react';
-import Navbar from '../../Navbar';
+import Navbar from '../../components/Navbar';
 import '../../css/QnAWriteForm.css';
 import { useHistory } from 'react-router-dom';
 
